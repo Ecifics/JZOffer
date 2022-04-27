@@ -24,6 +24,5 @@
 hs_err_pid*
 
 # IDEA init file
-.idea
-
-.target
+.idea/
+.target/

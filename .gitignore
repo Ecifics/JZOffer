@@ -24,8 +24,8 @@
 hs_err_pid*
 
 # IDEA init file
-.idea/
+.idea
 
-.target/
+.target
 
-.src/main/test/
+.src/test

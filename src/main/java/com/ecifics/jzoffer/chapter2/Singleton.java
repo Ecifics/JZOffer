@@ -6,4 +6,23 @@ package com.ecifics.jzoffer.chapter2;
  * @date 4/27/2022-4:16 PM
  */
 public class Singleton {
+
+    /**
+     * 单例对象
+     */
+    private static Singleton INSTANCE;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (INSTANCE == null) {
+            synchronized (Singleton.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new Singleton();
+                }
+            }
+        }
+
+        return INSTANCE;
+    }
 }

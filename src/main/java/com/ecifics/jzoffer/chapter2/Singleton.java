@@ -10,7 +10,7 @@ public class Singleton {
     /**
      * 单例对象
      */
-    private static Singleton INSTANCE;
+    private volatile static Singleton INSTANCE;
 
     private Singleton() {}
 

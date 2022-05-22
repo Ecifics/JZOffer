@@ -69,7 +69,7 @@ public class Singleton {
     /**
      * 单例对象
      */
-    private static Singleton INSTANCE;
+    private volatile static Singleton INSTANCE;
 
     private Singleton() {}
 
@@ -91,6 +91,7 @@ public class Singleton {
 
 如果未创建实例，即使有多个线程进入了第一个if语句，但是也只能有一个获得锁创建实例，释放锁后其他线程进入同步语句，第二个if语句会将这些线程挡在外面，不会在创建新的实例对象
 
+在INSTANCE上加上volatile是防止`INSTANCE = new Singleton()`发生指令重排造成构造多个实例
 ### 3.4 解法四：利用静态内部类
 #### 3.4.1 代码
 ```java
